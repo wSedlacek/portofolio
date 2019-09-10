@@ -4,10 +4,10 @@ import { NgxsLoggerPluginOptions } from '@ngxs/logger-plugin/src/symbols';
 
 import { environment } from 'src/environments/environment';
 
-import { LayoutState } from './layout.state';
+import { MenuState } from './menu.state';
 import { ProjectsState } from './projects.state';
 
-export const STATES_MODULES = [ProjectsState, LayoutState];
+export const STATES_MODULES = [ProjectsState, MenuState];
 
 export const OPTIONS_CONFIG: Partial<NgxsConfig> = {
   developmentMode: !environment.production,

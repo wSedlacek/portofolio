@@ -1,0 +1,12 @@
+<app-bar></app-bar>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content [@resizeMain]="menuFull | async">
+    <app-header></app-header>
+    <app-projects></app-projects>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
+<app-splash></app-splash>

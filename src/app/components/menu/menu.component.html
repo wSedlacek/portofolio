@@ -1,1 +1,6 @@
-<p>menu works!</p>
+<div [@resizeMenu]="menuFull | async">
+  <button mat-button color="primary" *ngFor="let page of menuItems | async">
+    <mat-icon>{{ page?.icon }}</mat-icon>
+    <span>{{ page?.title }} </span>
+  </button>
+</div>

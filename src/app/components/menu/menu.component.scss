@@ -1,0 +1,14 @@
+button {
+  display: flex;
+  width: calc(100% - 10px);
+  margin: 5px;
+  overflow: hidden;
+}
+
+mat-icon {
+  margin: 0 4px;
+}
+
+span {
+  margin: 0 16px;
+}
