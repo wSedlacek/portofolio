@@ -1,6 +1,7 @@
 import { State, Action } from '@ngxs/store';
-import { Project } from '../models/Project';
 import { HttpClient } from '@angular/common/http';
+
+import { Project } from '../models/Project';
 
 export class AddProject {
   static readonly type = '[Projects] Add';
@@ -26,6 +27,8 @@ export class ProjectsState {
 
   @Action(FindProjects)
   find({ setState }) {
-    setState(this.http.get<Project[]>('https://gitlab.com/api/v4/users/4406562/projects'));
+    this.http
+      .get<Project[]>('https://gitlab.com/api/v4/users/4406562/projects')
+      .subscribe(setState);
   }
 }
