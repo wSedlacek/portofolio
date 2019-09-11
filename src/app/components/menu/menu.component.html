@@ -1,6 +1,8 @@
 <div [@resizeMenu]="menuFull | async">
-  <button mat-button color="primary" *ngFor="let page of menuItems | async">
-    <mat-icon>{{ page?.icon }}</mat-icon>
-    <span>{{ page?.title }} </span>
-  </button>
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle *ngFor="let section of menuItems | async" [ngx-scroll-to]="section.link">
+      <mat-icon>{{ section?.icon }}</mat-icon>
+      <span>{{ section?.title }}</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
 </div>

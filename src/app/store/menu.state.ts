@@ -6,13 +6,13 @@ export class ToggleMenu {
 }
 
 @State<Menu>({
-  name: 'fullMenu',
+  name: 'menu',
   defaults: {
     full: false,
     items: [
       { title: 'Videos', link: '#header', icon: 'video_library' },
+      { title: 'Contact', link: '#contact', icon: 'contact_mail' },
       { title: 'Projects', link: '#projects', icon: 'dynamic_feed' },
-      { title: 'Contact', link: '#footer', icon: 'contact_mail' },
     ],
   },
 })

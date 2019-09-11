@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { resizeMenu } from '../../animations/animations';
+import { resizeMenu } from '../../helpers/animations';
 
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
