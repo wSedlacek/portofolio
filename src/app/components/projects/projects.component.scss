@@ -1,0 +1,93 @@
+@import '~src/theme.scss';
+@import '~@angular/material/theming';
+
+h2 {
+  margin-left: 15px;
+}
+
+.projects {
+  margin: 10px;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  mat-card {
+    transform-style: preserve-3d;
+    height: fit-content;
+    border-radius: 0.3rem;
+    padding: 0;
+    @include mat-elevation(10);
+
+    mat-card-header {
+      border-top-right-radius: 0.3rem;
+      border-top-left-radius: 0.3rem;
+      height: 120px;
+      background: $primary;
+
+      display: flex;
+      justify-content: flex-end;
+
+      * {
+        height: fit-content;
+      }
+    }
+
+    img {
+      transition: all 0.5s ease-out;
+      backface-visibility: hidden;
+      width: 100%;
+      margin: 0;
+
+      &.avatar {
+        background: white;
+        border: solid 10px white;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        margin: -6rem calc(50% - 75px) 0.25rem;
+      }
+    }
+
+    mat-expansion-panel {
+      @include mat-elevation(0);
+      background: none;
+      border-radius: 0 !important;
+
+      mat-card-subtitle {
+        margin-bottom: 0;
+      }
+
+      ::ng-deep .mat-card-header-text {
+        margin: 0px !important;
+      }
+
+      ::ng-deep .mat-expansion-panel-body {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  mat-card-actions {
+    margin: 5px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $accent;
+
+    fa-icon {
+      margin-left: 10px;
+    }
+  }
+}
