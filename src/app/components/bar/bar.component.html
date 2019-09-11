@@ -1,6 +1,13 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <button mat-icon-button (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>wSedlacek</span>
+  <div class="spacer"></div>
+  <a mat-icon-button>
+    <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
+  </a>
+  <a mat-icon-button>
+    <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
+  </a>
 </mat-toolbar>
