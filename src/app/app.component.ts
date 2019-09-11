@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
-import { resizeMain } from './animations/animations';
+import { resizeMain } from './helpers/animations';
 
 import { MenuState } from './store/menu.state';
 
