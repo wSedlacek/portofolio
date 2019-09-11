@@ -1,31 +1,29 @@
-<div id="projects">
-  <h2>Projects</h2>
+<h2>Projects</h2>
 
-  <div class="projects">
-    <mat-card *ngFor="let project of projects | async">
-      <mat-card-header>
-        <a mat-button href="{{ project.web_url }}">
-          <span>Gitlab</span>
-          <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
-        </a>
-      </mat-card-header>
-      <img
-        class="avatar"
-        [src]="
-          project.avatar_url ||
-          'https://images.unsplash.com/photo-1566154247258-466b02048738?auto=format&w=200&q=0.2'
-        "
-        alt=""
-      />
-      <cdk-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            {{ project.name }}
-          </mat-expansion-panel-header>
+<div class="projects">
+  <mat-card *ngFor="let project of projects | async">
+    <mat-card-header>
+      <a mat-button href="{{ project.web_url }}">
+        <span>Gitlab</span>
+        <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
+      </a>
+    </mat-card-header>
+    <img
+      class="avatar"
+      [src]="
+        project.avatar_url ||
+        'https://images.unsplash.com/photo-1566154247258-466b02048738?auto=format&w=200&q=0.2'
+      "
+      alt=""
+    />
+    <cdk-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{ project.name }}
+        </mat-expansion-panel-header>
 
-          <p>{{ project.description }}</p>
-        </mat-expansion-panel>
-      </cdk-accordion>
-    </mat-card>
-  </div>
+        <p>{{ project.description }}</p>
+      </mat-expansion-panel>
+    </cdk-accordion>
+  </mat-card>
 </div>

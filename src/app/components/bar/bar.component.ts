@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
-import { ToggleMenu } from 'src/app/store/menu.state';
+import { ToggleMenu } from '../../store/menu.state';
 
 @Component({
   selector: 'app-bar',
