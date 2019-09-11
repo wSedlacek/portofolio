@@ -1,0 +1,29 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template:
+    'bar' 64px
+    'main' auto;
+
+  @media (max-width: 600px) {
+    grid-template:
+      'bar' 56px
+      'main' auto;
+  }
+
+  app-bar {
+    grid-area: bar;
+  }
+  mat-sidenav-container {
+    grid-area: main;
+  }
+  app-footer {
+    grid-area: footer;
+  }
+  app-splash {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+  }
+}
