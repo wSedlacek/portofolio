@@ -1,6 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-const miniMenuSize = '68px';
+const miniMenuSize = '74px';
 const fullMenuSize = '180px';
 
 export const resizeMenu = trigger('resizeMenu', [

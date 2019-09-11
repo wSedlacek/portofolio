@@ -1,22 +1,17 @@
 @import '~src/theme.scss';
 
-mat-button-toggle-group {
+.mat-button {
   display: flex;
-  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  width: calc(100% - 10px);
+  margin: 5px;
+  overflow: hidden;
   border: none !important;
+  border-radius: 0.25rem;
 
-  mat-button-toggle {
-    transition: all 0.2s ease-in-out;
-    width: calc(100% - 10px);
-    margin: 5px;
-    overflow: hidden;
-    border: none !important;
-    border-radius: 0.25rem;
-
-    &.mat-button-toggle-checked {
-      color: $primary;
-      background-color: rgba($primary, 0.15);
-    }
+  &.selected {
+    color: $primary;
+    background-color: rgba($primary, 0.15);
   }
 }
 

@@ -3,10 +3,21 @@
   <mat-sidenav mode="side" opened>
     <app-menu></app-menu>
   </mat-sidenav>
-  <mat-sidenav-content [@resizeMain]="menuFull | async">
-    <app-header></app-header>
-    <app-contact></app-contact>
-    <app-projects></app-projects>
+  <mat-sidenav-content
+    [@resizeMain]="menuFull | async"
+    scrollSpy
+    [spiedTags]="['SECTION']"
+    (sectionChange)="changeSelection($event)"
+  >
+    <section id="videos">
+      <app-header></app-header>
+    </section>
+    <section id="contact">
+      <app-contact></app-contact>
+    </section>
+    <section id="projects">
+      <app-projects></app-projects>
+    </section>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <app-splash></app-splash>
