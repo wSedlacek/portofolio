@@ -6,8 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTwitter,
+  faGitlab,
+  faLinkedin,
+  faGitAlt,
+  faHtml5,
+  faCss3,
+  faJsSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import { faCircleNotch, faFireAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -24,30 +32,32 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { StoreModule } from './store/store.module';
 
 import { AppComponent } from './app.component';
-import { BarComponent } from './components/bar/bar.component';
-import { HeaderComponent } from './components/header/header.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { ProjectsComponent } from './components/projects/projects.component';
 import { SplashComponent } from './components/splash/splash.component';
+import { BarComponent } from './components/bar/bar.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CardComponent } from './components/card/card.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 import { ScrollSpyDirective } from './helpers/directives';
 import { IsOpenPipe, IsClosedPipe } from './helpers/pipes';
-import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    BarComponent,
     SplashComponent,
+    BarComponent,
+    MenuComponent,
     HeaderComponent,
+    CardComponent,
     ProjectsComponent,
     ContactComponent,
+    ExperienceComponent,
     IsOpenPipe,
     IsClosedPipe,
     ScrollSpyDirective,
-    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +81,16 @@ import { CardComponent } from './components/card/card.component';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGitlab, faTwitter, faCircleNotch);
+    library.addIcons(
+      faTwitter,
+      faGitlab,
+      faLinkedin,
+      faGitAlt,
+      faHtml5,
+      faCss3,
+      faJsSquare,
+      faCircleNotch,
+      faFireAlt
+    );
   }
 }

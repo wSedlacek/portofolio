@@ -17,6 +17,7 @@ export class SelectSection {
     items: [
       { title: 'Videos', link: 'videos', icon: 'video_library' },
       { title: 'Contact', link: 'contact', icon: 'contact_mail' },
+      { title: 'Experience', link: 'experience', icon: 'work' },
       { title: 'Projects', link: 'projects', icon: 'dynamic_feed' },
     ],
     selected: 'videos',
