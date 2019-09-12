@@ -4,10 +4,13 @@
   </button>
   <span>wSedlacek</span>
   <div class="spacer"></div>
+  <a mat-icon-button [href]="'https://twitter.com/' + (me | async)?.twitter">
+    <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
+  </a>
   <a mat-icon-button [href]="(me | async)?.web_url">
     <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
   </a>
-  <a mat-icon-button [href]="'https://twitter.com/' + (me | async)?.twitter">
-    <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
+  <a mat-icon-button [href]="(me | async)?.linkedin">
+    <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
   </a>
 </mat-toolbar>
