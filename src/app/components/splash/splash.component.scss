@@ -18,7 +18,7 @@
 
 .spinner {
   opacity: 0;
-  animation: fadein 0.3s ease-in 1s;
+  animation: fadein 0.3s ease-in 1s forwards;
 }
 
 .loaded {
