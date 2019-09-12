@@ -1,5 +1,9 @@
 import { State, Action } from '@ngxs/store';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
+
 import { HttpClient } from '@angular/common/http';
+
+import { Loaded } from './splash.state';
 
 import { Project } from '../models/Project';
 
@@ -19,16 +23,23 @@ export class FindProjects {
 export class ProjectsState {
   constructor(private http: HttpClient) {}
 
+  @Dispatch() private loaded = () => new Loaded();
+
   @Action(AddProject)
-  add({ getState, setState }, action: AddProject) {
+  public add({ getState, setState }, action: AddProject) {
     const state = getState();
     setState([...state, action.projectToAdd]);
   }
 
   @Action(FindProjects)
-  find({ setState }) {
+  public find({ setState }) {
+    const completed = (val: Project[]) => {
+      this.loaded();
+      setState(val);
+    };
+
     this.http
       .get<Project[]>('https://gitlab.com/api/v4/users/4406562/projects')
-      .subscribe(setState);
+      .subscribe(completed);
   }
 }

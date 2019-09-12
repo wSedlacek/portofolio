@@ -7,6 +7,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faGitlab, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -70,7 +71,6 @@ import { CardComponent } from './components/card/card.component';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faGitlab);
-    library.addIcons(faTwitter);
+    library.addIcons(faGitlab, faTwitter, faCircleNotch);
   }
 }

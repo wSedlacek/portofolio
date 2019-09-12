@@ -1,1 +1,5 @@
-<p>splash works!</p>
+<div class="splash" [ngClass]="{ loaded: !(loading | async) }">
+  <div class="spinner">
+    <fa-icon [icon]="['fas', 'circle-notch']" [spin]="true" size="3x"></fa-icon>
+  </div>
+</div>
