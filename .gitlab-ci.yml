@@ -7,7 +7,7 @@ pages:
 
   stage: deploy
   script:
-    - yarn global add @angular/cli@6.2.1
+    - yarn global add @angular/cli
     - yarn
     - yarn build
     - yarn deploy:gitlab
