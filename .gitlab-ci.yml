@@ -9,8 +9,7 @@ pages:
   script:
     - yarn global add @angular/cli
     - yarn
-    - yarn build
-    - yarn deploy:gitlab
+    - yarn build:gitlab
   artifacts:
     paths:
       - public

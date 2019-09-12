@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod=\"true\"",
+    "build:gitlab": "ng build --base-href=/portofolio/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy:gitlab": "mkdir public && mv dist/portofolio/* public/"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
