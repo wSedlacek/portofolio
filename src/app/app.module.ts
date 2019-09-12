@@ -32,6 +32,7 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { ScrollSpyDirective } from './helpers/directives';
 import { IsOpenPipe, IsClosedPipe } from './helpers/pipes';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { IsOpenPipe, IsClosedPipe } from './helpers/pipes';
     IsOpenPipe,
     IsClosedPipe,
     ScrollSpyDirective,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

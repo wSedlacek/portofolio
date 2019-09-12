@@ -1,8 +1,22 @@
+@import '~src/theme.scss';
+
 h2 {
   margin-left: 15px;
 }
 
-mat-card {
-  margin: 10px;
-  height: 150px;
+app-card {
+  ::ng-deep mat-card {
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+
+    @media (max-width: 600px) {
+      margin: 0 10px;
+    }
+
+    mat-card-header {
+      height: 120px;
+      background: $accent;
+    }
+  }
 }

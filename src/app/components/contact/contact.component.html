@@ -1,3 +1,13 @@
 <h2>Contact Infomration</h2>
 
-<mat-card> </mat-card>
+<app-card>
+  <mat-card-header></mat-card-header>
+  <img class="avatar" [src]="(me | async)?.avatar_url" />
+  <mat-card-title>
+    {{ (me | async)?.name }}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{ (me | async)?.bio }}
+  </mat-card-subtitle>
+  <a [href]="'mailto:' + (me | async)?.public_email">{{ (me | async)?.public_email }}</a>
+</app-card>

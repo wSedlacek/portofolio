@@ -6,8 +6,9 @@ import { environment } from 'src/environments/environment';
 
 import { MenuState } from './menu.state';
 import { ProjectsState } from './projects.state';
+import { MeState } from './me.state';
 
-export const STATES_MODULES = [ProjectsState, MenuState];
+export const STATES_MODULES = [ProjectsState, MenuState, MeState];
 
 export const OPTIONS_CONFIG: Partial<NgxsConfig> = {
   developmentMode: !environment.production,

@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="mat-elevation-z4">
   <button mat-icon-button (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>wSedlacek</span>
   <div class="spacer"></div>
-  <a mat-icon-button>
+  <a mat-icon-button [href]="(me | async)?.web_url">
     <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
   </a>
-  <a mat-icon-button>
+  <a mat-icon-button [href]="'https://twitter.com/' + (me | async)?.twitter">
     <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
   </a>
 </mat-toolbar>

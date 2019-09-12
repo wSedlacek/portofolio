@@ -1,7 +1,7 @@
 <h2>Projects</h2>
 
 <div class="projects">
-  <mat-card *ngFor="let project of projects | async">
+  <app-card *ngFor="let project of projects | async">
     <mat-card-header>
       <a mat-button href="{{ project.web_url }}">
         <span>Gitlab</span>
@@ -17,7 +17,7 @@
       alt=""
     />
     <cdk-accordion>
-      <mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>
           {{ project.name }}
         </mat-expansion-panel-header>
@@ -25,5 +25,5 @@
         <p>{{ project.description }}</p>
       </mat-expansion-panel>
     </cdk-accordion>
-  </mat-card>
+  </app-card>
 </div>
