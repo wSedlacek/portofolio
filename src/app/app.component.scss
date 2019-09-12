@@ -23,7 +23,13 @@
   mat-sidenav-container {
     grid-area: main;
   }
-  app-footer {
-    grid-area: footer;
+}
+
+.safari-fix {
+  position: fixed;
+  height: calc(100% - 64px);
+
+  @media (max-width: 599px) {
+    height: calc(100% - 56px);
   }
 }
