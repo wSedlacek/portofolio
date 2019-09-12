@@ -1,9 +1,9 @@
 <h2 class="title">Experience</h2>
 
-<mat-card class="experiences mat-elevation-z8">
-  <div class="experience" *ngFor="let experience of experiences">
+<div class="experiences">
+  <mat-card class="experience mat-elevation-z8" *ngFor="let experience of experiences">
     <fa-icon [icon]="['fab', experience.icon]" size="10x"></fa-icon>
     <mat-card-title>{{ experience.name }}</mat-card-title>
     <mat-card-subtitle> {{ experience.years }}</mat-card-subtitle>
-  </div>
-</mat-card>
+  </mat-card>
+</div>
