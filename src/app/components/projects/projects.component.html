@@ -9,13 +9,14 @@
       </a>
     </mat-card-header>
     <img
+      *ngIf="project.avatar_url"
       class="avatar"
-      [src]="
-        project.avatar_url ||
-        'https://images.unsplash.com/photo-1566154247258-466b02048738?auto=format&w=200&q=0.2'
-      "
-      alt=""
+      [src]="project.avatar_url"
+      [alt]="project.name"
     />
+    <div *ngIf="!project.avatar_url" class="avatar">
+      {{ project.name[0] }}
+    </div>
     <cdk-accordion>
       <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>

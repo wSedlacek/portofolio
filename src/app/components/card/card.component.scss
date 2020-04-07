@@ -23,6 +23,19 @@ mat-card {
     }
   }
 
+  ::ng-deep div.avatar {
+    background: #3f51b5;
+    border: solid 10px white;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin: -6rem calc(50% - 75px) 0.25rem;
+    text-align: center;
+    line-height: 140px;
+    font-size: 75px;
+    color: white;
+  }
+
   ::ng-deep mat-expansion-panel {
     background: none;
     margin: 0 -16px -16px;
