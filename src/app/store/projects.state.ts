@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 
@@ -20,6 +21,7 @@ export class FindProjects {
   name: 'projects',
   defaults: [],
 })
+@Injectable()
 export class ProjectsState {
   constructor(private http: HttpClient) {}
 

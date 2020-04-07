@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action } from '@ngxs/store';
 
 export class Loaded {
@@ -8,6 +9,7 @@ export class Loaded {
   name: 'splash',
   defaults: true,
 })
+@Injectable()
 export class SplashState {
   @Action(Loaded)
   loaded({ setState }) {

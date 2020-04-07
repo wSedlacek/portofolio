@@ -17,5 +17,6 @@ import { resizeMain } from './helpers/animations';
 })
 export class AppComponent {
   @Select(MenuState.full) menuFull: Observable<boolean>;
-  @Dispatch() changeSelection = (selected: string) => new SelectSection(selected);
+  @Dispatch() changeSelection = (selected: string) =>
+    new SelectSection(selected);
 }

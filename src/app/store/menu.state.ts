@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action, Selector } from '@ngxs/store';
 import { Menu } from '../models/Menu';
 
@@ -23,6 +24,7 @@ export class SelectSection {
     selected: 'videos',
   },
 })
+@Injectable()
 export class MenuState {
   @Selector()
   static full(state: Menu) {
