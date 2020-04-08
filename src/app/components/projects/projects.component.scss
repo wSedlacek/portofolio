@@ -9,26 +9,28 @@
 
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  align-items: center;
 
-  @media (max-width: 1280px) {
-    grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 1680px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 1000px) {
-    grid-template-columns: 1fr 1fr;
+  @media (max-width: 1120px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 app-card {
   mat-card-header {
     height: 120px;
-
     background: $primary;
+    padding: 4px;
 
     display: flex;
     justify-content: flex-end;
@@ -39,10 +41,6 @@ app-card {
 
     a {
       color: $accent !important;
-
-      fa-icon {
-        margin-left: 10px;
-      }
     }
   }
 }

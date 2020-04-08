@@ -26,4 +26,5 @@ export interface Project {
   star_count: number;
   tag_list: Array<string>;
   web_url: string;
+  link: string;
 }

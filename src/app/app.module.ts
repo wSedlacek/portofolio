@@ -5,7 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 import {
   faTwitter,
   faGitlab,
@@ -15,7 +18,12 @@ import {
   faCss3,
   faJsSquare,
 } from '@fortawesome/free-brands-svg-icons';
-import { faCircleNotch, faFireAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleNotch,
+  faFireAlt,
+  faLink,
+  faCode,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -90,7 +98,9 @@ export class AppModule {
       faCss3,
       faJsSquare,
       faCircleNotch,
-      faFireAlt
+      faFireAlt,
+      faLink,
+      faCode
     );
   }
 }
