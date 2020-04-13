@@ -17,6 +17,9 @@ import {
   faHtml5,
   faCss3,
   faJsSquare,
+  faAngular,
+  faReact,
+  faNodeJs,
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faCircleNotch,
@@ -100,7 +103,11 @@ export class AppModule {
       faCircleNotch,
       faFireAlt,
       faLink,
-      faCode
+      faCode,
+      faAngular,
+      faReact,
+      faNodeJs,
+      faFireAlt
     );
   }
 }

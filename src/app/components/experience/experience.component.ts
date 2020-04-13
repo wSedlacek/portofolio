@@ -8,6 +8,27 @@ import { Component } from '@angular/core';
 export class ExperienceComponent {
   public experiences = [
     {
+      name: 'Angular',
+      icon: 'angular',
+      years: '1 Year',
+    },
+    {
+      name: 'React',
+      icon: 'react',
+      years: '1 Year',
+    },
+    {
+      name: 'Firebase',
+      icon: 'fire-alt',
+      iconStyle: 'fas',
+      years: '1 year',
+    },
+    {
+      name: 'Node',
+      icon: 'node-js',
+      years: '2 Years',
+    },
+    {
       name: 'HTML',
       icon: 'html5',
       years: '4 Years',
