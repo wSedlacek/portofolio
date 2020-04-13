@@ -1,3 +1,5 @@
+@import '~src/theme.scss';
+
 html,
 body {
   height: 100%;
@@ -9,8 +11,11 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-@import '~src/theme.scss';
+a {
+  color: map-get($app-accent, 500);
+}
+
 @include mat-core();
 
-$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);

@@ -16,8 +16,8 @@ mat-card {
     margin: 0;
 
     &.avatar {
-      background: white;
-      border: solid 10px white;
+      background: #424242;
+      border: solid 10px #424242;
       border-radius: 50%;
       height: 150px;
       width: 150px;
@@ -27,7 +27,7 @@ mat-card {
 
   ::ng-deep div.avatar {
     background: $primary;
-    border: solid 10px white;
+    border: solid 10px #424242;
     border-radius: 50%;
     height: 150px;
     width: 150px;
