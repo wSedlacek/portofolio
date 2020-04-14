@@ -7,7 +7,6 @@ pages:
 
   stage: deploy
   script:
-    - yarn global add @angular/cli
     - yarn
     - yarn build:gitlab
   artifacts:
