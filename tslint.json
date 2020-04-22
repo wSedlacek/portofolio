@@ -28,7 +28,8 @@
       true,
       "decorator",
       "pascal-case-fixer",
-      "new-line-after-decorators-and-tags"
+      "new-line-after-decorators-and-tags",
+      "angular-syntax-fixer"
     ],
     "forin": true,
     "import-blacklist": [true, "rxjs/Rx"],

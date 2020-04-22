@@ -1,0 +1,13 @@
+<ng-container *ngIf="!(this.loading$ | async); else loading">
+  <mat-card *ngIf="this.profile$ | async as profile">
+    <mat-card-header>
+      <img mat-card-avatar [src]="profile.avatar_url" [alt]="profile.name" />
+      <mat-card-title>{{ profile.name }}</mat-card-title>
+      <mat-card-subtitle>{{ profile.job_title }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

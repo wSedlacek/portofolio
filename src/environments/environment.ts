@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  api: 'https://gitlab.com/api/v4',
+  userId: '4406562',
 };
 
 /**
