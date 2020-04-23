@@ -1,11 +1,77 @@
 <ng-container *ngIf="!(this.loading$ | async); else loading">
-  <mat-card *ngIf="this.profile$ | async as profile">
-    <mat-card-header>
-      <img mat-card-avatar [src]="profile.avatar_url" [alt]="profile.name" />
-      <mat-card-title>{{ profile.name }}</mat-card-title>
-      <mat-card-subtitle>{{ profile.job_title }}</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
+  <section
+    *ngIf="this.profile$ | async as profile"
+    class="mat-elevation-z10 profile"
+    fxLayout="column"
+    fxLayout.gt-sm="row"
+    fxLayoutAlign="start center"
+    fxLayoutAlign.gt-sm="space-between"
+  >
+    <div class="left" fxLayout="row">
+      <img
+        mat-card-avatar
+        class="mat-elevation-z10"
+        [src]="profile.avatar_url"
+        [alt]="profile.name"
+      />
+      <div fxLayout="column" fxLayoutAlign="space-between">
+        <div class="identity">
+          <h2>{{ profile.name }}</h2>
+          <h4>{{ profile.organization }} - {{ profile.job_title }}</h4>
+          <h4 fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon class="leading">email</mat-icon>
+            <span>{{ profile.public_email }}</span>
+          </h4>
+        </div>
+        <div class="buttons" fxLayout="row" fxLayoutAlign="start center">
+          <a [href]="'mailto:' + profile.public_email">
+            <button mat-raised-button color="primary">
+              Contact
+            </button>
+          </a>
+          <button mat-button>Resume</button>
+        </div>
+      </div>
+    </div>
+    <div class="right" fxLayout="column" fxLayoutAlign="space-between">
+      <div class="details" fxLayout="row" fxLayoutAlign="space-between">
+        <div
+          class="details--left"
+          fxLayout="column"
+          fxLayoutAlign="space-between"
+        >
+          <h3><b>Availability:</b></h3>
+          <h3><b>Location:</b></h3>
+        </div>
+        <div
+          class="details--right"
+          fxLayout="column"
+          fxLayoutAlign="space-between"
+        >
+          <h3>Full-time (40h/week)</h3>
+          <h3>{{ profile.location }}</h3>
+        </div>
+      </div>
+
+      <div class="links" fxLayout="row" fxLayoutAlign="start center">
+        <a [href]="profile.web_url">
+          <button mat-icon-button>
+            <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
+          </button>
+        </a>
+        <a [href]="'https://twitter.com/' + profile.twitter">
+          <button mat-icon-button>
+            <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
+          </button>
+        </a>
+        <a [href]="profile.linkedin">
+          <button mat-icon-button>
+            <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
 </ng-container>
 
 <ng-template #loading>
