@@ -1,0 +1,15 @@
+<section
+  *ngIf="!(loading$ | async); else loading"
+  gdColumns="1fr"
+  gdColumns.gt-xs="1fr 1fr"
+  gdColumns.gt-sm="1fr 1fr 1fr"
+  gdColumns.gt-md="1fr 1fr 1fr 1fr"
+  gdGap="12px"
+>
+  <app-project *ngFor="let project of projects$ | async" [project]="project">
+  </app-project>
+</section>
+
+<ng-template #loading>
+  <mat-progress-spinner></mat-progress-spinner>
+</ng-template>

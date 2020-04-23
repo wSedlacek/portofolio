@@ -1,0 +1,32 @@
+<div class="project mat-elevation-z6" fxLayout="column">
+  <header fxLayout="column">
+    <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="date">
+        {{ project.created_at | date }}
+      </span>
+    </div>
+    <h2 fxLayout="column" fxLayoutAlign="center" fxFlex="100">
+      {{ project.name }}
+    </h2>
+  </header>
+  <section
+    class="details"
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+    fxFlex="100"
+  >
+    <p>{{ project.description }}</p>
+    <div class="buttons" fxLayout="row" fxLayoutAlign="center center">
+      <a [href]="project.web_url">
+        <button mat-icon-button color="primary">
+          <fa-icon [icon]="['fas', 'code']"></fa-icon>
+        </button>
+      </a>
+      <a *ngIf="project.deployed_url" [href]="project.deployed_url">
+        <button mat-icon-button color="accent">
+          <fa-icon [icon]="['fas', 'link']"></fa-icon>
+        </button>
+      </a>
+    </div>
+  </section>
+</div>

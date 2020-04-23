@@ -8,6 +8,7 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ProfileModule } from './profile/profile.module';
+import { ProjectsModule } from './projects/projects.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,8 +18,8 @@ import { ProfileModule } from './profile/profile.module';
     HttpClientModule,
     environment.production ? [] : AkitaNgDevtools,
     ProfileModule,
+    ProjectsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

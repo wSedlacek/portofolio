@@ -1,0 +1,78 @@
+:host {
+  display: block;
+
+  &:nth-child(1n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(36, 198, 220), rgb(81, 74, 157));
+      }
+    }
+  }
+
+  &:nth-child(2n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(76, 184, 196), rgb(60, 211, 173));
+      }
+    }
+  }
+
+  &:nth-child(3n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(248, 87, 166), rgb(255, 88, 88));
+      }
+    }
+  }
+
+  &:nth-child(4n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(203, 173, 109), rgb(213, 51, 105));
+      }
+    }
+  }
+
+  &:nth-child(5n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(29, 151, 108), rgb(147, 249, 185));
+      }
+    }
+  }
+
+  &:nth-child(6n + 0) {
+    .project {
+      header {
+        background: linear-gradient(to left, rgb(221, 94, 137), rgb(247, 187, 151));
+      }
+    }
+  }
+}
+
+.project {
+  height: 100%;
+  width: 100%;
+
+  header {
+    color: white;
+    padding: 8px 16px;
+    height: 148px;
+
+    .top {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .details {
+    padding: 10px;
+    .buttons {
+      padding: 8px 16px 0 16px;
+      border-top: 1px solid #e0e0e0;
+    }
+  }
+}
