@@ -11,23 +11,24 @@ import { ProfileStore } from './profile.store';
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
   constructor(
-    private readonly profileStore: ProfileStore,
+    private readonly store: ProfileStore,
     private readonly http: HttpClient
   ) {}
 
   public get(): Observable<Profile> {
-    this.profileStore.setError(undefined);
-    this.profileStore.setLoading(true);
+    this.store.setError(undefined);
+    this.store.setLoading(true);
 
     return this.http
       .get<Profile>(`${environment.api}/users/${environment.userId}`)
       .pipe(
         tap((profile) => {
-          this.profileStore.setLoading(false);
-          this.profileStore.update(profile);
+          this.store.setLoading(false);
+          this.store.update(profile);
         }),
         catchError((e) => {
-          this.profileStore.setError(e);
+          this.store.setLoading(false);
+          this.store.setError(e);
           throw e;
         })
       );

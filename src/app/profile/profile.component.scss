@@ -31,11 +31,15 @@ $mat-card-header-size: 150px !default;
   }
 
   .identity {
-    h2, h3, h4 {
+    h2,
+    h3,
+    h4 {
       margin: 0;
     }
 
-    h2:not(:first-child), h3:not(:first-child), h4:not(:first-child) {
+    h2:not(:first-child),
+    h3:not(:first-child),
+    h4:not(:first-child) {
       margin-top: 6px;
     }
 
@@ -61,7 +65,8 @@ $mat-card-header-size: 150px !default;
       margin-left: 12px;
     }
 
-    .mat-raised-button, .mat-button {
+    .mat-raised-button,
+    .mat-button {
       padding: 2px 32px;
     }
   }
@@ -78,6 +83,4 @@ $mat-card-header-size: 150px !default;
   .details--right {
     margin-left: 24px;
   }
-
-
 }
