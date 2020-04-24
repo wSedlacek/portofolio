@@ -2,19 +2,17 @@
 @import './variables.scss';
 
 @include mat-core();
-
-$theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 html,
 body {
   height: 100%;
+  overscroll-behavior: none;
 }
 
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  min-width: fit-content;
 }
 
 a {

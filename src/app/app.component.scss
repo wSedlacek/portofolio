@@ -1,0 +1,16 @@
+header {
+  background: url('~/assets/banner.jpg');
+  padding-bottom: 72px;
+}
+
+app-profile {
+  padding: 10px 10px 10px 10px;
+
+  @media (min-width: 960px) {
+    padding: 30px 30px 10px 30px;
+  }
+}
+
+app-panels {
+  margin-top: -72px;
+}

@@ -1,29 +1,49 @@
 :host {
   display: block;
-  padding: 12px;
 }
 
-$mat-card-header-size: 150px !default;
 .mat-card-avatar {
-  height: $mat-card-header-size;
-  width: $mat-card-header-size;
+  height: 96px;
+  width: 96px;
   border-radius: 50%;
   flex-shrink: 0;
   object-fit: cover;
   pointer-events: none;
-  margin-right: 38px;
+  margin-right: 12px;
+  display: none;
+
+  @media (min-width: 400px) {
+    display: block;
+  }
+
+  @media (min-width: 500px) {
+    height: 150px;
+    width: 150px;
+    margin-right: 38px;
+  }
 }
 
 .profile {
   padding: 32px 8px;
   place-content: stretch space-between;
+  background: white;
+  overflow-x: scroll;
+  border-radius: 0.25rem;
 
   .left {
-    padding: 16px 32px;
+    padding: 16px 0;
+
+    @media (min-width: 500px) {
+      padding: 16px 32px;
+    }
   }
 
   .right {
-    padding: 16px 32px;
+    padding: 16px 0;
+
+    @media (min-width: 500px) {
+      padding: 16px 32px;
+    }
 
     @media (min-width: 960px) {
       border-left: 1px solid #e0e0e0;
@@ -37,18 +57,20 @@ $mat-card-header-size: 150px !default;
       margin: 0;
     }
 
-    h2:not(:first-child),
-    h3:not(:first-child),
-    h4:not(:first-child) {
-      margin-top: 6px;
+    h2.gutter-bottom,
+    h3.gutter-bottom,
+    h4.gutter-bottom {
+      margin-bottom: 8px;
     }
 
     h2 {
       font-size: 28px;
+      line-height: 28px;
     }
 
     h4 {
       font-size: 14px;
+      line-height: 14px;
       color: #666666;
     }
     mat-icon {
@@ -60,7 +82,7 @@ $mat-card-header-size: 150px !default;
   }
 
   .buttons {
-    margin-top: 6px;
+    margin-top: 12px;
     :not(:first-child) {
       margin-left: 12px;
     }

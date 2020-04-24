@@ -7,7 +7,7 @@
     fxLayoutAlign="start center"
     fxLayoutAlign.gt-sm="space-between"
   >
-    <div class="left" fxLayout="row">
+    <div class="left" fxLayout="row" fxLayoutAlign="flex-start center">
       <img
         mat-card-avatar
         class="mat-elevation-z10"
@@ -17,7 +17,9 @@
       <div fxLayout="column" fxLayoutAlign="space-between">
         <div class="identity">
           <h2>{{ profile.name }}</h2>
-          <h4>{{ profile.organization }} - {{ profile.job_title }}</h4>
+          <h4 class="gutter-bottom">
+            {{ profile.organization }} - {{ profile.job_title }}
+          </h4>
           <h4 fxLayout="row" fxLayoutAlign="start center">
             <mat-icon class="leading">email</mat-icon>
             <span>{{ profile.public_email }}</span>

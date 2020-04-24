@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+mat-tab-group {
+  background: white;
+}
+
+mat-tab-group {
+  margin: 16px 4px;
+  border-radius: 0.25rem;
+
+  @media (min-width: 500px) {
+    margin: 16px;
+  }
+
+  ::ng-deep mat-tab-body {
+    background-color: #fdfdfd;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+
+    & > * {
+      box-sizing: border-box;
+      padding: 16px 6px;
+
+      @media (min-width: 500px) {
+        padding: 16px;
+      }
+    }
+  }
+}
