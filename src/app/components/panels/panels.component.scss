@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 mat-tab-group {
@@ -9,6 +10,8 @@ mat-tab-group {
 mat-tab-group {
   margin: 16px 4px;
   border-radius: 0.25rem;
+  max-width: 1200px;
+  flex: 1;
 
   @media (min-width: 500px) {
     margin: 16px;
@@ -24,7 +27,7 @@ mat-tab-group {
 
     & > * {
       box-sizing: border-box;
-      padding: 16px 6px;
+      padding: 16px 10px;
 
       @media (min-width: 500px) {
         padding: 16px;

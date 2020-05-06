@@ -1,0 +1,30 @@
+<ng-container *ngIf="!(loading$ | async); else loading">
+  <section class="activities">
+    <div class="activity" *ngFor="let activity of activities$ | async">
+      <div class="dot"></div>
+      <div class="line"></div>
+      <div class="info" fxLayout="column">
+        <h5>{{ activity.date | uppercase }}</h5>
+        <h4>{{ activity.headline | uppercase }}</h4>
+        <p *ngFor="let paragraph of activity.paragraphs">{{ paragraph }}</p>
+
+        <h5 *ngIf="activity.links">LINKS</h5>
+        <a *ngFor="let link of activity.links" [href]="link">{{ link }}</a>
+
+        <h5 class="center" *ngIf="activity.videos || activity.images">
+          ATTACHMENTS
+        </h5>
+        <div class="video" *ngFor="let video of activity.videos">
+          <youtube-player [videoId]="video"></youtube-player>
+        </div>
+        <div class="image" *ngFor="let image of activity.images">
+          <img [src]="image" [alt]="activity.headline" />
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #loading>
+  <mat-progress-spinner></mat-progress-spinner>
+</ng-template>

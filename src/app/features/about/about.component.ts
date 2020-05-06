@@ -14,8 +14,8 @@ export class AboutComponent implements OnInit, OnDestroy {
     private readonly service: AboutService
   ) {}
   public readonly loading$ = this.query.selectLoading();
-  public readonly story$ = this.query.story$;
-  public readonly skills$ = this.query.skills$;
+  public readonly paragraphs$ = this.query.select('paragraphs');
+  public readonly skills$ = this.query.select('skills');
 
   @Override()
   public ngOnInit(): void {

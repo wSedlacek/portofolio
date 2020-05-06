@@ -1,0 +1,86 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+.activity {
+  position: relative;
+
+  &:nth-child(1n) {
+    .dot {
+      background-color: map-get($mat-blue, 500);
+    }
+  }
+
+  &:nth-child(2n) {
+    .dot {
+      background-color: map-get($mat-red, 500);
+    }
+  }
+
+  &:nth-child(3n) {
+    .dot {
+      background-color: map-get($mat-orange, 500);
+    }
+  }
+
+  &:nth-child(4n) {
+    .dot {
+      background-color: map-get($mat-green, 500);
+    }
+  }
+
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: -4px;
+    z-index: 10;
+  }
+
+  .line {
+    position: absolute;
+    z-index: 5;
+    width: 1px;
+    height: 100%;
+    background-color: #e0e0e0;
+    left: 0;
+    top: 0;
+  }
+
+  .info {
+    padding-bottom: 18px;
+    margin-left: 18px;
+
+    p {
+      margin: 0 0 8px;
+    }
+
+    h4 {
+      margin: 0 0 4px;
+    }
+
+    h5 {
+      margin: 0;
+    }
+
+    .video {
+      align-self: center;
+    }
+  }
+}
+
+::ng-deep {
+  youtube-player {
+    iframe {
+      max-width: 100%;
+    }
+  }
+}
+
+.center {
+  align-self: center;
+}

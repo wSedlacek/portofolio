@@ -242,6 +242,14 @@
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-9.1.2.tgz#f23ba191c4407c4bce0b7ea7f7ca5edd47ada010"
   integrity sha512-csxE4HkuhVR1X932Q3kSDqBoF7Awuq5dsjv0nFk78raiHgG3CNnfMLHt8xD9XtOmR7ZT+D4yh/YmIK6W7J5hbQ==
 
+"@angular/youtube-player@^9.2.2":
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/youtube-player/-/youtube-player-9.2.2.tgz#002fd47fa3ebc2893367fce65e8939c8105cfd17"
+  integrity sha512-2FX6M+RlFdeSMqqYbIkUr0h9z5Q8SZ1ozRrKJ4p5XGABBf6JFfxr8bLLSIxw0tT13u1iPNieyg9VvghQjCd+IQ==
+  dependencies:
+    "@types/youtube" "^0.0.38"
+    tslib "^1.9.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -1190,6 +1198,11 @@
     "@types/node" "*"
     "@types/source-list-map" "*"
     source-map "^0.6.1"
+
+"@types/youtube@^0.0.38":
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/@types/youtube/-/youtube-0.0.38.tgz#04aa5efa61f4d52e9cf682575a9dfed58f31e8c1"
+  integrity sha512-rS0nLlnnZIvOfBNT4957rkKRMHjHxutoVhSEzowocYgNiTMVBmN+Hbkf/L3TeGMMtts9uKZ9gw7O2JLHREVnIw==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"

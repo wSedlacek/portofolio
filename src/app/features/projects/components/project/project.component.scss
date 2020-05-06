@@ -3,7 +3,7 @@
 :host {
   display: block;
 
-  &:nth-child(1n + 0) {
+  &:nth-child(1n) {
     .project {
       header {
         background: linear-gradient(to left, #24c6dc, #514a9d);
@@ -11,7 +11,7 @@
     }
   }
 
-  &:nth-child(2n + 0) {
+  &:nth-child(2n) {
     .project {
       header {
         background: linear-gradient(to left, #f7ff00, #db36a4);
@@ -19,7 +19,7 @@
     }
   }
 
-  &:nth-child(3n + 0) {
+  &:nth-child(3n) {
     .project {
       header {
         background: linear-gradient(to left, #67b26f, #4ca2cd);
@@ -27,7 +27,7 @@
     }
   }
 
-  &:nth-child(4n + 0) {
+  &:nth-child(4n) {
     .project {
       header {
         background: linear-gradient(to left, #de6262, #ffb88c);
@@ -35,7 +35,7 @@
     }
   }
 
-  &:nth-child(5n + 0) {
+  &:nth-child(5n) {
     .project {
       header {
         background: linear-gradient(to left, #e100ff, #7f00ff);
@@ -43,7 +43,7 @@
     }
   }
 
-  &:nth-child(6n + 0) {
+  &:nth-child(6n) {
     .project {
       header {
         background: linear-gradient(to left, #fc4a1a, #f7b733);
@@ -51,7 +51,7 @@
     }
   }
 
-  &:nth-child(7n + 0) {
+  &:nth-child(7n) {
     .project {
       header {
         background: linear-gradient(to left, #ff5858, #f857a6);
@@ -59,7 +59,7 @@
     }
   }
 
-  &:nth-child(8n + 0) {
+  &:nth-child(8n) {
     .project {
       header {
         background: linear-gradient(to left, #dce35b, #45b649);
@@ -92,6 +92,7 @@
   }
 
   .details {
+    flex: 1;
     padding: 10px;
 
     .bottom {
@@ -118,20 +119,34 @@
       top: calc(var(--avatar-size) / 4);
     }
 
-    &:nth-child(1n + 0) {
+    &:nth-child(1n) {
       background-color: map-get($mat-blue, 800);
     }
 
-    &:nth-child(2n + 0) {
+    &:nth-child(2n) {
       background-color: map-get($mat-orange, 600);
     }
 
-    &:nth-child(3n + 0) {
+    &:nth-child(3n) {
       background-color: map-get($mat-blue-gray, 700);
     }
 
-    &:nth-child(4n + 0) {
+    &:nth-child(4n) {
       background-color: map-get($mat-green, 700);
     }
+  }
+}
+
+.buttons {
+  .link {
+    color: map-get($mat-blue, 800);
+  }
+
+  .readme {
+    color: map-get($mat-purple, 800);
+  }
+
+  .code {
+    color: map-get($mat-yellow, 800);
   }
 }

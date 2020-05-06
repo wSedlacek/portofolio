@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { extractMetadata } from '../../../utils/metadata.util';
+import { extractMetadata } from '../../../utils';
 import { ContentfulService } from '../../contentful/contentful.service';
 
 import { About } from './about.model';
@@ -23,7 +23,7 @@ export class AboutService {
       map((about) => {
         const [{ Skills: skills }] = extractMetadata(about.metadata);
 
-        return { ...about, skills };
+        return { ...about, skills, paragraphs: about.story.split('\n\n') };
       }),
       tap((about) => {
         this.store.setLoading(false);

@@ -11,8 +11,16 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { faCode, faLink } from '@fortawesome/free-solid-svg-icons';
-import { NgTakePipeModule, NgTruncatePipeModule } from 'angular-pipes';
+import {
+  faBookReader,
+  faCode,
+  faLink,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  NgJoinPipeModule,
+  NgTakePipeModule,
+  NgTruncatePipeModule,
+} from 'angular-pipes';
 
 import { ProjectComponent } from './components/project/project.component';
 import { ProjectsComponent } from './projects.component';
@@ -29,11 +37,12 @@ import { ProjectsComponent } from './projects.component';
     FontAwesomeModule,
     NgTruncatePipeModule,
     NgTakePipeModule,
+    NgJoinPipeModule,
   ],
   exports: [ProjectsComponent],
 })
 export class ProjectsModule {
   constructor(private readonly library: FaIconLibrary) {
-    library.addIcons(faCode, faLink);
+    library.addIcons(faCode, faBookReader, faLink);
   }
 }

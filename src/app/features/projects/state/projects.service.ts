@@ -28,7 +28,7 @@ export class ProjectsService {
         map((projects) =>
           projects.map((project) => {
             const [
-              { Stack: stack, Link: links, Members: members },
+              { Stack: stack, Link: links, Members: members, Date: dates },
               description,
             ] = extractMetadata(project.description);
 
@@ -38,6 +38,7 @@ export class ProjectsService {
               stack,
               members,
               link: links ? links[0] : undefined,
+              created_at: dates ? dates[0] : project.created_at,
             };
           })
         ),

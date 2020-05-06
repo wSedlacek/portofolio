@@ -15,16 +15,11 @@
         fxLayoutAlign="center"
         fxLayoutGap="0.35rem"
       >
-        <span *ngFor="let tech of project.stack | take: 3">{{ tech }}</span>
+        <span>{{ project.stack | take: 3 | join: ' - ' }}</span>
       </div>
     </div>
   </header>
-  <section
-    class="details"
-    fxLayout="column"
-    fxLayoutAlign="space-between"
-    fxFlex="100"
-  >
+  <section class="details" fxLayout="column" fxLayoutAlign="space-between">
     <p>{{ project.description }}</p>
 
     <div class="bottom" fxLayout="row" fxLayoutAlign="space-between center">
@@ -47,13 +42,22 @@
       </div>
 
       <div class="buttons" fxLayout="row" fxLayoutAlign="center center">
-        <a *ngIf="project.link" [href]="project.link">
-          <button mat-icon-button color="accent">
+        <a *ngIf="project.link" class="link" [href]="project.link">
+          <button mat-icon-button>
             <fa-icon [icon]="['fas', 'link']"></fa-icon>
           </button>
         </a>
-        <a [href]="project.web_url">
-          <button mat-icon-button color="primary">
+        <a
+          *ngIf="project.readme_url"
+          class="readme"
+          [href]="project.readme_url"
+        >
+          <button mat-icon-button>
+            <fa-icon [icon]="['fas', 'book-reader']"></fa-icon>
+          </button>
+        </a>
+        <a [href]="project.web_url" class="code">
+          <button mat-icon-button>
             <fa-icon [icon]="['fas', 'code']"></fa-icon>
           </button>
         </a>

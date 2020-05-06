@@ -1,7 +1,7 @@
 export const extractMetadata = (
-  data: string
+  data?: string
 ): [{ [key: string]: string[] }, string] => {
-  const occurrences = data.match(/(\w+):\s*([^\n]*)/gi);
+  const occurrences = data?.match(/(\w+):\s*([^\n]*)/gi);
   if (!occurrences) return [{}, data];
 
   let scraps = data;
