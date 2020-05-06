@@ -17,16 +17,26 @@
       <div fxLayout="column" fxLayoutAlign="space-between">
         <div class="identity">
           <h2>{{ profile.name }}</h2>
-          <h4 class="gutter-bottom">
+          <h4
+            class="gutter-bottom"
+            *ngIf="profile.organization && profile.job_title"
+          >
             {{ profile.organization }} - {{ profile.job_title }}
           </h4>
-          <h4 fxLayout="row" fxLayoutAlign="start center">
+          <h4
+            fxLayout="row"
+            fxLayoutAlign="start center"
+            *ngIf="profile.public_email"
+          >
             <mat-icon class="leading">email</mat-icon>
             <span>{{ profile.public_email }}</span>
           </h4>
         </div>
         <div class="buttons" fxLayout="row" fxLayoutAlign="start center">
-          <a [href]="'mailto:' + profile.public_email">
+          <a
+            *ngIf="profile.public_email"
+            [href]="'mailto:' + profile.public_email"
+          >
             <button mat-raised-button color="primary">
               Contact
             </button>
@@ -43,7 +53,7 @@
           fxLayoutAlign="space-between"
         >
           <h3><strong>Availability:</strong></h3>
-          <h3><strong>Location:</strong></h3>
+          <h3 *ngIf="profile.location"><strong>Location:</strong></h3>
         </div>
         <div
           class="details--right"
@@ -51,24 +61,33 @@
           fxLayoutAlign="space-between"
         >
           <h3>Full-time (40h/week)</h3>
-          <h3>{{ profile.location }}</h3>
+          <h3 *ngIf="profile.location">{{ profile.location }}</h3>
         </div>
       </div>
 
       <div class="links" fxLayout="row" fxLayoutAlign="start center">
-        <a [href]="profile.web_url">
+        <a class="gitlab" [href]="profile.web_url">
           <button mat-icon-button>
             <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
           </button>
         </a>
-        <a [href]="'https://twitter.com/' + profile.twitter">
+        <a
+          class="twitter"
+          *ngIf="profile.twitter"
+          [href]="'https://twitter.com/' + profile.twitter"
+        >
           <button mat-icon-button>
             <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
           </button>
         </a>
-        <a [href]="profile.linkedin">
+        <a class="linkedin" *ngIf="profile.linkedin" [href]="profile.linkedin">
           <button mat-icon-button>
             <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
+          </button>
+        </a>
+        <a class="skype" *ngIf="profile.skype" [href]="profile.skype">
+          <button mat-icon-button>
+            <fa-icon [icon]="['fab', 'skype']" size="lg"></fa-icon>
           </button>
         </a>
       </div>

@@ -15,10 +15,11 @@ import {
 import {
   faGitlab,
   faLinkedin,
+  faSkype,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { ProfileComponent } from './profile.component';
+import { ProfileComponent } from './components/profile.component';
 import { ProfileQuery } from './state/profile.query';
 import { ProfileService } from './state/profile.service';
 import { ProfileStore } from './state/profile.store';
@@ -39,6 +40,6 @@ import { ProfileStore } from './state/profile.store';
 })
 export class ProfileModule {
   constructor(private readonly library: FaIconLibrary) {
-    library.addIcons(faTwitter, faGitlab, faLinkedin);
+    library.addIcons(faTwitter, faGitlab, faLinkedin, faSkype);
   }
 }

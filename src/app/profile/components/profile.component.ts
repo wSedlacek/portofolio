@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { untilDestroyed } from 'ngx-take-until-destroy';
 
-import { ProfileQuery } from './state/profile.query';
-import { ProfileService } from './state/profile.service';
+import { ProfileQuery } from '../state/profile.query';
+import { ProfileService } from '../state/profile.service';
 
 @Component({
   selector: 'app-profile',
