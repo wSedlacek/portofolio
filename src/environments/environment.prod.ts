@@ -9,6 +9,7 @@ export const environment = {
     contentTypeIds: {
       about: 'about',
       activity: 'activity',
+      resume: '3xrviGnNgQ2HUXzlAcANcy',
     },
   },
 };
