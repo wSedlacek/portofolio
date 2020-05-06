@@ -1,0 +1,93 @@
+:host {
+  display: block;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected {
+  &.\.net {
+    background-color: #6e409e;
+  }
+
+  &.agile {
+    background-color: #20acf0;
+  }
+
+  &.angular {
+    background-color: #dd032f;
+  }
+
+  &.c\# {
+    background-color: #6a1577;
+  }
+
+  &.css3 {
+    background-color: #1b73ba;
+  }
+
+  &.firebase {
+    background-color: #ffa715;
+  }
+
+  &.full-stack {
+    background-color: #fbad17;
+  }
+
+  &.graphql {
+    background-color: #e535ab;
+  }
+
+  &.html5 {
+    background-color: #e45026;
+  }
+
+  &.java {
+    background-color: #ea2d30;
+  }
+
+  &.nestjs {
+    background-color: #e0244e;
+  }
+
+  &.nwrl {
+    background-color: #033056;
+  }
+
+  &.python {
+    background-color: #2e9bfe;
+  }
+
+  &.react {
+    background-color: #61dbfc;
+  }
+
+  &.scrum {
+    background-color: #4995cc;
+  }
+
+  &.scss {
+    background-color: #cf649b;
+  }
+
+  &.software {
+    background-color: #54a9ff;
+  }
+
+  &.sql {
+    background-color: #e7a11d;
+  }
+
+  &.typescript {
+    background-color: #037acc;
+  }
+
+  &.vue {
+    background-color: #3fb47f;
+  }
+
+  &.web {
+    background-color: #f55847;
+  }
+
+  &.git {
+    background-color: #fc8463;
+  }
+}

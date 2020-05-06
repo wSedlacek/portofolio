@@ -15,9 +15,12 @@ mat-tab-group {
   }
 
   ::ng-deep mat-tab-body {
-    background-color: #fdfdfd;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
+
+    .mat-tab-body-content {
+      background-color: #fdfdfd;
+    }
 
     & > * {
       box-sizing: border-box;

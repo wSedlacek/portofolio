@@ -12,8 +12,8 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { faCode, faLink } from '@fortawesome/free-solid-svg-icons';
 
-import { ProjectsComponent } from './projects.component';
 import { ProjectComponent } from './components/project/project.component';
+import { ProjectsComponent } from './projects.component';
 
 @NgModule({
   declarations: [ProjectsComponent, ProjectComponent],

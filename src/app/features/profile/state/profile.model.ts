@@ -1,4 +1,4 @@
-export interface Profile {
+export interface ProfileDTO {
   id: number;
   name: string;
   username: string;
@@ -15,4 +15,10 @@ export interface Profile {
   website_url: string;
   organization: string;
   job_title: string;
+}
+
+export interface Profile extends ProfileDTO {
+  tagline: string;
+  availability: string;
+  github: string;
 }

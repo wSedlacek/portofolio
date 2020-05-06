@@ -2,6 +2,10 @@
   <mat-tab label="Projects">
     <app-projects></app-projects>
   </mat-tab>
-  <mat-tab label="About"></mat-tab>
-  <mat-tab label="Activity"></mat-tab>
+
+  <mat-tab label="About" *ngIf="aboutEnabled">
+    <app-about></app-about>
+  </mat-tab>
+
+  <mat-tab label="Activity" *ngIf="activityEnabled"></mat-tab>
 </mat-tab-group>

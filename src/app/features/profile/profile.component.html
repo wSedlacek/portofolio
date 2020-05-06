@@ -52,7 +52,7 @@
           fxLayout="column"
           fxLayoutAlign="space-between"
         >
-          <h3><strong>Availability:</strong></h3>
+          <h3 *ngIf="profile.availability"><strong>Availability:</strong></h3>
           <h3 *ngIf="profile.location"><strong>Location:</strong></h3>
         </div>
         <div
@@ -60,7 +60,7 @@
           fxLayout="column"
           fxLayoutAlign="space-between"
         >
-          <h3>Full-time (40h/week)</h3>
+          <h3 *ngIf="profile.availability">{{ profile.availability }}</h3>
           <h3 *ngIf="profile.location">{{ profile.location }}</h3>
         </div>
       </div>
@@ -69,6 +69,11 @@
         <a class="gitlab" [href]="profile.web_url">
           <button mat-icon-button>
             <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
+          </button>
+        </a>
+        <a class="github" *ngIf="profile.github" [href]="profile.github">
+          <button mat-icon-button>
+            <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
           </button>
         </a>
         <a

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments';
 
 import { Project } from './project.model';
 import { ProjectsStore } from './projects.store';
@@ -17,7 +17,9 @@ export class ProjectsService {
     this.store.setLoading(true);
 
     return this.http
-      .get<Project[]>(`${environment.api}/users/${environment.userId}/projects`)
+      .get<Project[]>(
+        `${environment.gitlabAPI}/users/${environment.userId}/projects`
+      )
       .pipe(
         map((projects) =>
           projects.map((project) => ({

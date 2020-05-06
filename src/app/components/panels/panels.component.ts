@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments';
 
 @Component({
   selector: 'app-panels',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelsComponent implements OnInit {
   constructor() {}
+  public aboutEnabled = Boolean(environment?.contentful?.contentTypeIds?.about);
+  public activityEnabled = Boolean(
+    environment?.contentful?.contentTypeIds?.activity
+  );
 
   @Override()
   public ngOnInit(): void {}

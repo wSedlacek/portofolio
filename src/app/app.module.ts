@@ -7,11 +7,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 
-import { environment } from '../environments/environment';
+import { environment } from '../environments';
 import { AppComponent } from './app.component';
 import { PanelsComponent } from './components/panels/panels.component';
-import { ProfileModule } from './profile/profile.module';
-import { ProjectsModule } from './projects/projects.module';
+import { AboutModule } from './features/about/about.module';
+import { ProfileModule } from './features/profile/profile.module';
+import { ProjectsModule } from './features/projects/projects.module';
 
 @NgModule({
   declarations: [AppComponent, PanelsComponent],
@@ -20,10 +21,11 @@ import { ProjectsModule } from './projects/projects.module';
     BrowserAnimationsModule,
     HttpClientModule,
     environment.production ? [] : AkitaNgDevtools,
-    ProfileModule,
-    ProjectsModule,
     MatTabsModule,
     FlexLayoutModule,
+    AboutModule,
+    ProfileModule,
+    ProjectsModule,
   ],
   bootstrap: [AppComponent],
 })
