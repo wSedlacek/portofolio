@@ -18,8 +18,8 @@ export interface ProfileDTO {
 }
 
 export interface Profile extends ProfileDTO {
-  tagline: string;
-  availability: string;
-  github: string;
-  resume: string;
+  tagline?: string;
+  availability?: string;
+  github?: string;
+  resume?: string;
 }

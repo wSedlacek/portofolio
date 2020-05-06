@@ -5,9 +5,19 @@
         {{ project.created_at | date }}
       </span>
     </div>
-    <h2 fxLayout="column" fxLayoutAlign="center" fxFlex="100">
-      {{ project.name }}
-    </h2>
+    <div fxLayout="column" fxLayoutAlign="center" fxFlex="100">
+      <h2 class="name" fxLayout="column" fxLayoutAlign="center">
+        {{ project.name }}
+      </h2>
+      <div
+        class="stack"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        fxLayoutGap="0.35rem"
+      >
+        <span *ngFor="let tech of project.stack | take: 3">{{ tech }}</span>
+      </div>
+    </div>
   </header>
   <section
     class="details"
@@ -16,17 +26,38 @@
     fxFlex="100"
   >
     <p>{{ project.description }}</p>
-    <div class="buttons" fxLayout="row" fxLayoutAlign="center center">
-      <a *ngIf="project.deployed_url" [href]="project.deployed_url">
-        <button mat-icon-button color="accent">
-          <fa-icon [icon]="['fas', 'link']"></fa-icon>
-        </button>
-      </a>
-      <a [href]="project.web_url">
-        <button mat-icon-button color="primary">
-          <fa-icon [icon]="['fas', 'code']"></fa-icon>
-        </button>
-      </a>
+
+    <div class="bottom" fxLayout="row" fxLayoutAlign="space-between center">
+      <div
+        class="team"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.35rem"
+      >
+        <div
+          class="member"
+          *ngFor="let member of project.members"
+          [matTooltip]="member"
+          matTooltipPosition="after"
+        >
+          <span>
+            {{ member | truncate: 1 }}
+          </span>
+        </div>
+      </div>
+
+      <div class="buttons" fxLayout="row" fxLayoutAlign="center center">
+        <a *ngIf="project.link" [href]="project.link">
+          <button mat-icon-button color="accent">
+            <fa-icon [icon]="['fas', 'link']"></fa-icon>
+          </button>
+        </a>
+        <a [href]="project.web_url">
+          <button mat-icon-button color="primary">
+            <fa-icon [icon]="['fas', 'code']"></fa-icon>
+          </button>
+        </a>
+      </div>
     </div>
   </section>
 </div>

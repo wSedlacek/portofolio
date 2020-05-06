@@ -1,5 +1,9 @@
-export const extractMetadata = (data) => {
+export const extractMetadata = (
+  data: string
+): [{ [key: string]: string[] }, string] => {
   const occurrences = data.match(/(\w+):\s*([^\n]*)/gi);
+  if (!occurrences) return [{}, data];
+
   let scraps = data;
   occurrences.forEach(
     (occurrence) => (scraps = scraps.replace(occurrence, ''))

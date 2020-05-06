@@ -1,4 +1,4 @@
-export interface Project {
+export interface ProjectDTO {
   id: number;
   description: string;
   name: string;
@@ -11,7 +11,6 @@ export interface Project {
   ssh_url_to_repo: string;
   http_url_to_repo: string;
   web_url: string;
-  deployed_url?: string;
   readme_url: null | string;
   avatar_url: null | string;
   star_count: number;
@@ -158,4 +157,10 @@ export interface ProjectAccess {
 export enum Visibility {
   Private = 'private',
   Public = 'public',
+}
+
+export interface Project extends ProjectDTO {
+  stack?: string[];
+  members?: string[];
+  link?: string;
 }

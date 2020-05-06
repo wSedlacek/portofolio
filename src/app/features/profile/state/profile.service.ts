@@ -30,11 +30,22 @@ export class ProfileService {
     ]).pipe(
       map(([profile, resume]) => {
         const [
-          { Availability: availability, Github: github, Tagline: tagline },
+          {
+            Availability: availabilities,
+            Github: githubLinks,
+            Tagline: taglines,
+          },
           bio,
         ] = extractMetadata(profile.bio);
 
-        return { ...profile, bio, availability, github, tagline, resume };
+        return {
+          ...profile,
+          bio,
+          resume,
+          availability: availabilities ? availabilities[0] : undefined,
+          github: githubLinks ? githubLinks[0] : undefined,
+          tagline: taglines ? taglines[0] : undefined,
+        };
       }),
       tap((profile) => {
         this.store.setLoading(false);
