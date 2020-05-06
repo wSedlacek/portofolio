@@ -21,4 +21,5 @@ export interface Profile extends ProfileDTO {
   tagline: string;
   availability: string;
   github: string;
+  resume: string;
 }

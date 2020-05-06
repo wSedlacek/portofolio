@@ -41,7 +41,9 @@
               Contact
             </button>
           </a>
-          <button mat-button>Resume</button>
+          <a *ngIf="profile.resume" [href]="profile.resume">
+            <button mat-button>Resume</button>
+          </a>
         </div>
       </div>
     </div>
