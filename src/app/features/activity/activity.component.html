@@ -9,7 +9,9 @@
         <p *ngFor="let paragraph of activity.paragraphs">{{ paragraph }}</p>
 
         <h5 *ngIf="activity.links">LINKS</h5>
-        <a *ngFor="let link of activity.links" [href]="link">{{ link }}</a>
+        <a *ngFor="let link of activity.links" [href]="link" target="_blank">
+          {{ link }}
+        </a>
 
         <h5 class="center" *ngIf="activity.videos || activity.images">
           ATTACHMENTS

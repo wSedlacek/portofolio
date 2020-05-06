@@ -42,7 +42,12 @@
       </div>
 
       <div class="buttons" fxLayout="row" fxLayoutAlign="center center">
-        <a *ngIf="project.link" class="link" [href]="project.link">
+        <a
+          *ngIf="project.link"
+          class="link"
+          [href]="project.link"
+          target="_blank"
+        >
           <button mat-icon-button>
             <fa-icon [icon]="['fas', 'link']"></fa-icon>
           </button>
@@ -51,12 +56,13 @@
           *ngIf="project.readme_url"
           class="readme"
           [href]="project.readme_url"
+          target="_blank"
         >
           <button mat-icon-button>
             <fa-icon [icon]="['fas', 'book-reader']"></fa-icon>
           </button>
         </a>
-        <a [href]="project.web_url" class="code">
+        <a class="code" [href]="project.web_url" target="_blank">
           <button mat-icon-button>
             <fa-icon [icon]="['fas', 'code']"></fa-icon>
           </button>
