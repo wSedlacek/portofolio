@@ -8,7 +8,7 @@ pages:
   stage: deploy
   script:
     - yarn
-    - yarn build:gitlab
+    - yarn build --prod
   artifacts:
     paths:
       - public
