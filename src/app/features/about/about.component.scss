@@ -11,6 +11,10 @@
     background-color: #20acf0;
   }
 
+  &.akita {
+    background-color: #c7764e;
+  }
+
   &.angular {
     background-color: #dd032f;
   }
@@ -19,20 +23,40 @@
     background-color: #6a1577;
   }
 
+  &.ci\/cd {
+    background-color: #de7e27;
+  }
+
   &.css3 {
     background-color: #1b73ba;
+  }
+
+  &.docker {
+    background-color: #0d93d2;
   }
 
   &.firebase {
     background-color: #ffa715;
   }
 
-  &.full-stack {
-    background-color: #fbad17;
+  &.git {
+    background-color: #fc8463;
+  }
+
+  &.github {
+    background-color: #000000;
+  }
+
+  &.gitlab {
+    background-color: #fc6d25;
   }
 
   &.graphql {
     background-color: #e535ab;
+  }
+
+  &.heroku {
+    background-color: #413682;
   }
 
   &.html5 {
@@ -43,8 +67,16 @@
     background-color: #ea2d30;
   }
 
+  &.kubernetes {
+    background-color: #2e6de6;
+  }
+
   &.nestjs {
     background-color: #e0244e;
+  }
+
+  &.nginx {
+    background-color: #029238;
   }
 
   &.nwrl {
@@ -59,6 +91,10 @@
     background-color: #61dbfc;
   }
 
+  &.redux {
+    background-color: #7347b8;
+  }
+
   &.scrum {
     background-color: #4995cc;
   }
@@ -67,12 +103,12 @@
     background-color: #cf649b;
   }
 
-  &.software {
-    background-color: #54a9ff;
-  }
-
   &.sql {
     background-color: #e7a11d;
+  }
+
+  &.space {
+    background-color: #2e98e6;
   }
 
   &.typescript {
@@ -83,11 +119,7 @@
     background-color: #3fb47f;
   }
 
-  &.web {
-    background-color: #f55847;
-  }
-
-  &.git {
-    background-color: #fc8463;
+  &.webstorm {
+    background-color: #04c6d6;
   }
 }

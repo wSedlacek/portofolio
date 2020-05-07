@@ -23,7 +23,11 @@ export class AboutService {
       map((about) => {
         const [{ Skills: skills }] = extractMetadata(about.metadata);
 
-        return { ...about, skills, paragraphs: about.story.split('\n\n') };
+        return {
+          ...about,
+          skills: [...skills].sort(),
+          paragraphs: about.story.split('\n\n'),
+        };
       }),
       tap((about) => {
         this.store.setLoading(false);

@@ -11,11 +11,23 @@
     .dot {
       background-color: map-get($mat-blue, 500);
     }
+
+    .info {
+      a {
+        color: map-get($mat-blue, 500);
+      }
+    }
   }
 
   &:nth-child(2n) {
     .dot {
       background-color: map-get($mat-red, 500);
+    }
+
+    .info {
+      a {
+        color: map-get($mat-red, 500);
+      }
     }
   }
 
@@ -23,11 +35,23 @@
     .dot {
       background-color: map-get($mat-orange, 500);
     }
+
+    .info {
+      a {
+        color: map-get($mat-orange, 500);
+      }
+    }
   }
 
   &:nth-child(4n) {
     .dot {
       background-color: map-get($mat-green, 500);
+    }
+
+    .info {
+      a {
+        color: map-get($mat-green, 500);
+      }
     }
   }
 
@@ -69,6 +93,11 @@
 
     .video {
       align-self: center;
+    }
+
+    a {
+      text-decoration: underline;
+      color: map-get($primary, 800);
     }
   }
 }

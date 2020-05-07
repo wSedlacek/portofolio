@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../../../environments';
-import { extractMetadata } from '../../../utils';
+import { byCreatedDate, extractMetadata } from '../../../utils';
 
 import { Project, ProjectDTO } from './project.model';
 import { ProjectsStore } from './projects.store';
@@ -42,6 +42,7 @@ export class ProjectsService {
             };
           })
         ),
+        map((projects) => [...projects].sort(byCreatedDate)),
         tap((entities) => {
           this.store.setLoading(false);
           this.store.set(entities);

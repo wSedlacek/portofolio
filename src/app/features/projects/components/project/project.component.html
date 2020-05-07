@@ -1,4 +1,8 @@
-<div class="project mat-elevation-z6" fxLayout="column">
+<div
+  class="project mat-elevation-z6"
+  [ngClass]="project.stack | join: ' ' | lowercase"
+  fxLayout="column"
+>
   <header fxLayout="column">
     <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
       <span class="date">
@@ -30,8 +34,9 @@
         fxLayoutGap="0.35rem"
       >
         <div
-          class="member"
           *ngFor="let member of project.members"
+          [ngClass]="member | lowercase"
+          class="member"
           [matTooltip]="member"
           matTooltipPosition="after"
         >

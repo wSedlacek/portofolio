@@ -2,70 +2,6 @@
 
 :host {
   display: block;
-
-  &:nth-child(1n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #24c6dc, #514a9d);
-      }
-    }
-  }
-
-  &:nth-child(2n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #f7ff00, #db36a4);
-      }
-    }
-  }
-
-  &:nth-child(3n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #67b26f, #4ca2cd);
-      }
-    }
-  }
-
-  &:nth-child(4n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #de6262, #ffb88c);
-      }
-    }
-  }
-
-  &:nth-child(5n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #e100ff, #7f00ff);
-      }
-    }
-  }
-
-  &:nth-child(6n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #fc4a1a, #f7b733);
-      }
-    }
-  }
-
-  &:nth-child(7n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #ff5858, #f857a6);
-      }
-    }
-  }
-
-  &:nth-child(8n) {
-    .project {
-      header {
-        background: linear-gradient(to left, #dce35b, #45b649);
-      }
-    }
-  }
 }
 
 .project {
@@ -74,12 +10,62 @@
   background: white;
   border-radius: 0.25rem;
 
+  &.typescript {
+    header {
+      background: linear-gradient(to left, #09c6f9, #045de9);
+    }
+  }
+
+  &.python {
+    header {
+      background: linear-gradient(to left, #dce35b, #45b649);
+    }
+  }
+
+  &.polymer {
+    header {
+      background: linear-gradient(to left, #ff1053, #f7accf);
+    }
+  }
+
+  &.android {
+    header {
+      background: linear-gradient(to left, #005238, #27a770);
+    }
+  }
+
+  &.vue {
+    header {
+      background: linear-gradient(to left, #0bab64, #3bb78f);
+    }
+  }
+
+  &.react {
+    header {
+      background: linear-gradient(to left, #009ffd, #2a2a72);
+    }
+  }
+
+  &.angular {
+    header {
+      background: linear-gradient(to left, #db3445, #990000);
+    }
+  }
+
+  &.html,
+  &.html5 {
+    header {
+      background: linear-gradient(to left, #fc4a1a, #f7b733);
+    }
+  }
+
   header {
     color: white;
     padding: 8px 16px;
     height: 148px;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    background: linear-gradient(to left, #864ba2, #6617cb);
 
     .top {
       width: 100%;
@@ -111,6 +97,7 @@
     text-align: center;
     height: var(--avatar-size);
     width: var(--avatar-size);
+    background-color: map-get($mat-blue-gray, 800);
 
     span {
       font-size: calc(var(--avatar-size) / 2);
@@ -119,20 +106,40 @@
       top: calc(var(--avatar-size) / 4);
     }
 
-    &:nth-child(1n) {
-      background-color: map-get($mat-blue, 800);
+    &.william {
+      background-color: map-get($mat-gray, 800);
     }
 
-    &:nth-child(2n) {
+    &.eric {
       background-color: map-get($mat-orange, 600);
     }
 
-    &:nth-child(3n) {
-      background-color: map-get($mat-blue-gray, 700);
+    &.adam {
+      background-color: map-get($mat-blue, 600);
     }
 
-    &:nth-child(4n) {
+    &.forest {
       background-color: map-get($mat-green, 700);
+    }
+
+    &.brit {
+      background-color: map-get($mat-pink, 700);
+    }
+
+    &.john {
+      background-color: map-get($mat-purple, 700);
+    }
+
+    &.dave {
+      background-color: map-get($mat-gray, 500);
+    }
+
+    &.martin {
+      background-color: map-get($mat-light-blue, 400);
+    }
+
+    &.rajamu {
+      background-color: map-get($mat-yellow, 800);
     }
   }
 }
