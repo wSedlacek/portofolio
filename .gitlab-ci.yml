@@ -8,7 +8,7 @@ pages:
   stage: deploy
   script:
     - yarn
-    - yarn build --prod
+    - yarn build --prod --sourcemap=false
   artifacts:
     paths:
       - public
