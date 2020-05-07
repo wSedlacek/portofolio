@@ -46,6 +46,12 @@
     }
   }
 
+  &.nestjs {
+    header {
+      background: linear-gradient(to left, #44000b, #e0455f);
+    }
+  }
+
   &.angular {
     header {
       background: linear-gradient(to left, #db3445, #990000);
@@ -140,6 +146,14 @@
 
     &.rajamu {
       background-color: map-get($mat-yellow, 800);
+    }
+
+    &.matthew {
+      background-color: map-get($mat-green, 900);
+    }
+
+    &.xuhui {
+      background-color: map-get($mat-amber, 500);
     }
   }
 }
