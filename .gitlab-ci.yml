@@ -1,4 +1,4 @@
-image: node:latest
+image: node:current-alpine
 
 pages:
   cache:
@@ -8,7 +8,7 @@ pages:
   stage: deploy
   script:
     - yarn
-    - yarn build --prod --sourcemap=false
+    - yarn build --prod --sourceMap=false
   artifacts:
     paths:
       - public
