@@ -88,6 +88,7 @@
     "component-selector": [true, "element", "app", "kebab-case"],
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
+    "no-increment-decrement": false,
     "no-input-rename": true,
     "no-inputs-metadata-property": true,
     "no-output-native": true,

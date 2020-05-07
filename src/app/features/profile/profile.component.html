@@ -61,16 +61,30 @@
             fxLayout="column"
             fxLayoutAlign="space-between"
           >
-            <h3 *ngIf="profile.availability"><strong>Availability:</strong></h3>
-            <h3 *ngIf="profile.location"><strong>Location:</strong></h3>
+            <h3 *ngIf="profile.experience">
+              <strong>Experience:</strong>
+            </h3>
+            <h3 *ngIf="profile.availability">
+              <strong>Availability:</strong>
+            </h3>
+            <h3 *ngIf="profile.location">
+              <strong>Location:</strong>
+            </h3>
           </div>
           <div
             class="details--right"
             fxLayout="column"
             fxLayoutAlign="space-between"
           >
-            <h3 *ngIf="profile.availability">{{ profile.availability }}</h3>
-            <h3 *ngIf="profile.location">{{ profile.location }}</h3>
+            <h3 *ngIf="profile.experience">
+              {{ profile.experience | timeAgo }}
+            </h3>
+            <h3 *ngIf="profile.availability">
+              {{ profile.availability }}
+            </h3>
+            <h3 *ngIf="profile.location">
+              {{ profile.location }}
+            </h3>
           </div>
         </div>
 

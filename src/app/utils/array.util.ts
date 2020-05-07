@@ -18,4 +18,7 @@ export const byCreatedDate = (
   b: { created_at: DateCompatible }
 ) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
 
-export const byStars = (a, b) => b.star_count - a.star_count;
+export const byStars = (a: { star_count: number }, b: { star_count: number }) =>
+  b.star_count - a.star_count;
+
+export const firstItem = <T>(array: T[]) => (array ? array[0] : undefined);

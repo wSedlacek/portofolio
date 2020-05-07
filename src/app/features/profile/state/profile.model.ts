@@ -22,4 +22,5 @@ export interface Profile extends ProfileDTO {
   availability?: string;
   github?: string;
   resume?: string;
+  experience?: Date;
 }

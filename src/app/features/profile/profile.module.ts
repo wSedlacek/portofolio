@@ -19,6 +19,7 @@ import {
   faSkype,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { SharedModule } from '../../shared/shared.module';
 
 import { ProfileComponent } from './profile.component';
 import { ProfileQuery } from './state/profile.query';
@@ -35,6 +36,7 @@ import { ProfileStore } from './state/profile.store';
     FontAwesomeModule,
     MatButtonModule,
     MatIconModule,
+    SharedModule,
   ],
   providers: [ProfileQuery, ProfileService, ProfileStore],
   exports: [ProfileComponent],

@@ -4,7 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../../../environments';
-import { byCreatedDate, byStars, extractMetadata } from '../../../utils';
+import {
+  byCreatedDate,
+  byStars,
+  extractMetadata,
+  firstItem,
+} from '../../../utils';
 
 import { Project, ProjectDTO } from './project.model';
 import { ProjectsStore } from './projects.store';
@@ -37,8 +42,8 @@ export class ProjectsService {
               description,
               stack,
               members,
-              link: links ? links[0] : undefined,
-              created_at: dates ? dates[0] : project.created_at,
+              link: firstItem(links),
+              created_at: firstItem(dates) ?? project.created_at,
             };
           })
         ),

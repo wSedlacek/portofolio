@@ -5,7 +5,7 @@ import { combineLatest, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../../../environments';
-import { extractMetadata } from '../../../utils';
+import { extractMetadata, firstItem } from '../../../utils';
 import { ContentfulService } from '../../contentful/contentful.service';
 import { Profile, ProfileDTO } from './profile.model';
 import { ProfileStore } from './profile.store';
@@ -34,17 +34,21 @@ export class ProfileService {
             Availability: availabilities,
             Github: githubLinks,
             Tagline: taglines,
+            Experience: experiences,
           },
           bio,
         ] = extractMetadata(profile.bio);
+
+        const experience = firstItem(experiences);
 
         return {
           ...profile,
           bio,
           resume,
-          availability: availabilities ? availabilities[0] : undefined,
-          github: githubLinks ? githubLinks[0] : undefined,
-          tagline: taglines ? taglines[0] : undefined,
+          availability: firstItem(availabilities),
+          github: firstItem(githubLinks),
+          tagline: firstItem(taglines),
+          experience: experience ? new Date(experience) : undefined,
         };
       }),
       tap((profile) => {
