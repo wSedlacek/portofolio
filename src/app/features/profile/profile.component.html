@@ -24,9 +24,9 @@
               {{ profile.organization }} - {{ profile.job_title }}
             </h4>
             <h4
+              *ngIf="profile.public_email"
               fxLayout="row"
               fxLayoutAlign="start center"
-              *ngIf="profile.public_email"
             >
               <mat-icon class="leading">email</mat-icon>
               <span>{{ profile.public_email }}</span>
@@ -37,12 +37,18 @@
               *ngIf="profile.public_email"
               [href]="'mailto:' + profile.public_email"
               target="_blank"
+              rel="noreferrer"
             >
               <button mat-raised-button color="primary">
                 Contact
               </button>
             </a>
-            <a *ngIf="profile.resume" [href]="profile.resume" target="_blank">
+            <a
+              *ngIf="profile.resume"
+              [href]="profile.resume"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button mat-button>Resume</button>
             </a>
           </div>
@@ -69,8 +75,13 @@
         </div>
 
         <div class="links" fxLayout="row" fxLayoutAlign="start center">
-          <a class="gitlab" [href]="profile.web_url" target="_blank">
-            <button mat-icon-button>
+          <a
+            class="gitlab"
+            [href]="profile.web_url"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button mat-icon-button aria-label="GitLab">
               <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
             </button>
           </a>
@@ -79,8 +90,9 @@
             *ngIf="profile.github"
             [href]="profile.github"
             target="_blank"
+            rel="noreferrer"
           >
-            <button mat-icon-button>
+            <button mat-icon-button aria-label="GitHub">
               <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
             </button>
           </a>
@@ -89,8 +101,9 @@
             *ngIf="profile.twitter"
             [href]="'https://twitter.com/' + profile.twitter"
             target="_blank"
+            rel="noreferrer"
           >
-            <button mat-icon-button>
+            <button mat-icon-button aria-label="Twitter">
               <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
             </button>
           </a>
@@ -99,8 +112,9 @@
             *ngIf="profile.linkedin"
             [href]="profile.linkedin"
             target="_blank"
+            rel="noreferrer"
           >
-            <button mat-icon-button>
+            <button mat-icon-button aria-label="LinkedIn">
               <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
             </button>
           </a>
@@ -109,8 +123,9 @@
             *ngIf="profile.skype"
             [href]="profile.skype"
             target="_blank"
+            rel="noreferrer"
           >
-            <button mat-icon-button>
+            <button mat-icon-button aria-label="Skype">
               <fa-icon [icon]="['fab', 'skype']" size="lg"></fa-icon>
             </button>
           </a>

@@ -52,8 +52,9 @@
           class="link"
           [href]="project.link"
           target="_blank"
+          rel="noreferrer"
         >
-          <button mat-icon-button>
+          <button mat-icon-button aria-label="Link">
             <fa-icon [icon]="['fas', 'link']"></fa-icon>
           </button>
         </a>
@@ -62,13 +63,19 @@
           class="readme"
           [href]="project.readme_url"
           target="_blank"
+          rel="noreferrer"
         >
-          <button mat-icon-button>
+          <button mat-icon-button aria-label="Readme">
             <fa-icon [icon]="['fas', 'book-reader']"></fa-icon>
           </button>
         </a>
-        <a class="code" [href]="project.web_url" target="_blank">
-          <button mat-icon-button>
+        <a
+          class="code"
+          [href]="project.web_url"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button mat-icon-button aria-label="Code">
             <fa-icon [icon]="['fas', 'code']"></fa-icon>
           </button>
         </a>

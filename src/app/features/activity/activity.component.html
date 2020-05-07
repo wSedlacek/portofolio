@@ -9,7 +9,12 @@
         <p *ngFor="let paragraph of activity.paragraphs">{{ paragraph }}</p>
 
         <h5 *ngIf="activity.links">LINKS</h5>
-        <a *ngFor="let link of activity.links" [href]="link" target="_blank">
+        <a
+          *ngFor="let link of activity.links"
+          [href]="link"
+          target="_blank"
+          rel="noreferrer"
+        >
           {{ link }}
         </a>
 
@@ -28,5 +33,7 @@
 </ng-container>
 
 <ng-template #loading>
-  <mat-progress-spinner></mat-progress-spinner>
+  <div fxLayoutAlign="center center">
+    <mat-spinner diameter="30"></mat-spinner>
+  </div>
 </ng-template>

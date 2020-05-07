@@ -8,6 +8,7 @@
       *ngFor="let skill of skills$ | async"
       [href]="'http://google.com/search?q=' + skill"
       target="_blank"
+      rel="noreferrer"
     >
       <mat-chip [ngClass]="skill | lowercase" selected>
         {{ skill }}
@@ -17,5 +18,7 @@
 </ng-container>
 
 <ng-template #loading>
-  <mat-progress-spinner></mat-progress-spinner>
+  <div fxLayoutAlign="center center">
+    <mat-spinner diameter="30"></mat-spinner>
+  </div>
 </ng-template>

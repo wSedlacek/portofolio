@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -10,7 +11,7 @@ import { AboutService } from './state/about.service';
 import { AboutStore } from './state/about.store';
 
 @NgModule({
-  imports: [CommonModule, MatChipsModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatChipsModule, MatProgressSpinnerModule, FlexModule],
   declarations: [AboutComponent],
   providers: [AboutQuery, AboutService, AboutStore],
   exports: [AboutComponent],
