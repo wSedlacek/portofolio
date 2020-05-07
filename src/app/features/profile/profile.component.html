@@ -36,12 +36,13 @@
           <a
             *ngIf="profile.public_email"
             [href]="'mailto:' + profile.public_email"
+            target="_blank"
           >
             <button mat-raised-button color="primary">
               Contact
             </button>
           </a>
-          <a *ngIf="profile.resume" [href]="profile.resume">
+          <a *ngIf="profile.resume" [href]="profile.resume" target="_blank">
             <button mat-button>Resume</button>
           </a>
         </div>
