@@ -1,123 +1,124 @@
-<ng-container *ngIf="!(this.loading$ | async); else loading">
-  <section
-    *ngIf="this.profile$ | async as profile"
-    class="mat-elevation-z10 profile"
-    fxLayout="column"
-    fxLayout.gt-sm="row"
-    fxLayoutAlign="start center"
-    fxLayoutAlign.gt-sm="space-between"
-  >
-    <div class="left" fxLayout="row" fxLayoutAlign="flex-start center">
-      <img
-        mat-card-avatar
-        class="mat-elevation-z10"
-        [src]="profile.avatar_url"
-        [alt]="profile.name"
-      />
-      <div fxLayout="column" fxLayoutAlign="space-between">
-        <div class="identity">
-          <h2>{{ profile.name }}</h2>
-          <h4
-            class="gutter-bottom"
-            *ngIf="profile.organization && profile.job_title"
-          >
-            {{ profile.organization }} - {{ profile.job_title }}
-          </h4>
-          <h4
-            fxLayout="row"
-            fxLayoutAlign="start center"
-            *ngIf="profile.public_email"
-          >
-            <mat-icon class="leading">email</mat-icon>
-            <span>{{ profile.public_email }}</span>
-          </h4>
+<section
+  class="mat-elevation-z10 profile"
+  fxLayout="column"
+  fxLayout.gt-sm="row"
+  fxLayoutAlign="start center"
+  fxLayoutAlign.gt-sm="space-between"
+>
+  <ng-container *ngIf="!(this.loading$ | async); else loading">
+    <ng-container *ngIf="this.profile$ | async as profile">
+      <div class="left" fxLayout="row" fxLayoutAlign="flex-start center">
+        <img
+          mat-card-avatar
+          class="mat-elevation-z10"
+          [src]="profile.avatar_url"
+          [alt]="profile.name"
+        />
+        <div fxLayout="column" fxLayoutAlign="space-between">
+          <div class="identity">
+            <h2>{{ profile.name }}</h2>
+            <h4
+              class="gutter-bottom"
+              *ngIf="profile.organization && profile.job_title"
+            >
+              {{ profile.organization }} - {{ profile.job_title }}
+            </h4>
+            <h4
+              fxLayout="row"
+              fxLayoutAlign="start center"
+              *ngIf="profile.public_email"
+            >
+              <mat-icon class="leading">email</mat-icon>
+              <span>{{ profile.public_email }}</span>
+            </h4>
+          </div>
+          <div class="buttons" fxLayout="row" fxLayoutAlign="start center">
+            <a
+              *ngIf="profile.public_email"
+              [href]="'mailto:' + profile.public_email"
+              target="_blank"
+            >
+              <button mat-raised-button color="primary">
+                Contact
+              </button>
+            </a>
+            <a *ngIf="profile.resume" [href]="profile.resume" target="_blank">
+              <button mat-button>Resume</button>
+            </a>
+          </div>
         </div>
-        <div class="buttons" fxLayout="row" fxLayoutAlign="start center">
-          <a
-            *ngIf="profile.public_email"
-            [href]="'mailto:' + profile.public_email"
-            target="_blank"
+      </div>
+      <div class="right" fxLayout="column" fxLayoutAlign="space-between">
+        <div class="details" fxLayout="row" fxLayoutAlign="space-between">
+          <div
+            class="details--left"
+            fxLayout="column"
+            fxLayoutAlign="space-between"
           >
-            <button mat-raised-button color="primary">
-              Contact
+            <h3 *ngIf="profile.availability"><strong>Availability:</strong></h3>
+            <h3 *ngIf="profile.location"><strong>Location:</strong></h3>
+          </div>
+          <div
+            class="details--right"
+            fxLayout="column"
+            fxLayoutAlign="space-between"
+          >
+            <h3 *ngIf="profile.availability">{{ profile.availability }}</h3>
+            <h3 *ngIf="profile.location">{{ profile.location }}</h3>
+          </div>
+        </div>
+
+        <div class="links" fxLayout="row" fxLayoutAlign="start center">
+          <a class="gitlab" [href]="profile.web_url" target="_blank">
+            <button mat-icon-button>
+              <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
             </button>
           </a>
-          <a *ngIf="profile.resume" [href]="profile.resume" target="_blank">
-            <button mat-button>Resume</button>
+          <a
+            class="github"
+            *ngIf="profile.github"
+            [href]="profile.github"
+            target="_blank"
+          >
+            <button mat-icon-button>
+              <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
+            </button>
+          </a>
+          <a
+            class="twitter"
+            *ngIf="profile.twitter"
+            [href]="'https://twitter.com/' + profile.twitter"
+            target="_blank"
+          >
+            <button mat-icon-button>
+              <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
+            </button>
+          </a>
+          <a
+            class="linkedin"
+            *ngIf="profile.linkedin"
+            [href]="profile.linkedin"
+            target="_blank"
+          >
+            <button mat-icon-button>
+              <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
+            </button>
+          </a>
+          <a
+            class="skype"
+            *ngIf="profile.skype"
+            [href]="profile.skype"
+            target="_blank"
+          >
+            <button mat-icon-button>
+              <fa-icon [icon]="['fab', 'skype']" size="lg"></fa-icon>
+            </button>
           </a>
         </div>
       </div>
-    </div>
-    <div class="right" fxLayout="column" fxLayoutAlign="space-between">
-      <div class="details" fxLayout="row" fxLayoutAlign="space-between">
-        <div
-          class="details--left"
-          fxLayout="column"
-          fxLayoutAlign="space-between"
-        >
-          <h3 *ngIf="profile.availability"><strong>Availability:</strong></h3>
-          <h3 *ngIf="profile.location"><strong>Location:</strong></h3>
-        </div>
-        <div
-          class="details--right"
-          fxLayout="column"
-          fxLayoutAlign="space-between"
-        >
-          <h3 *ngIf="profile.availability">{{ profile.availability }}</h3>
-          <h3 *ngIf="profile.location">{{ profile.location }}</h3>
-        </div>
-      </div>
-
-      <div class="links" fxLayout="row" fxLayoutAlign="start center">
-        <a class="gitlab" [href]="profile.web_url" target="_blank">
-          <button mat-icon-button>
-            <fa-icon [icon]="['fab', 'gitlab']" size="lg"></fa-icon>
-          </button>
-        </a>
-        <a
-          class="github"
-          *ngIf="profile.github"
-          [href]="profile.github"
-          target="_blank"
-        >
-          <button mat-icon-button>
-            <fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon>
-          </button>
-        </a>
-        <a
-          class="twitter"
-          *ngIf="profile.twitter"
-          [href]="'https://twitter.com/' + profile.twitter"
-          target="_blank"
-        >
-          <button mat-icon-button>
-            <fa-icon [icon]="['fab', 'twitter']" size="lg"></fa-icon>
-          </button>
-        </a>
-        <a
-          class="linkedin"
-          *ngIf="profile.linkedin"
-          [href]="profile.linkedin"
-          target="_blank"
-        >
-          <button mat-icon-button>
-            <fa-icon [icon]="['fab', 'linkedin']" size="lg"></fa-icon>
-          </button>
-        </a>
-        <a
-          class="skype"
-          *ngIf="profile.skype"
-          [href]="profile.skype"
-          target="_blank"
-        >
-          <button mat-icon-button>
-            <fa-icon [icon]="['fab', 'skype']" size="lg"></fa-icon>
-          </button>
-        </a>
-      </div>
-    </div>
-  </section>
-</ng-container>
+    </ng-container>
+  </ng-container>
+</section>
 
 <ng-template #loading>
   <mat-spinner></mat-spinner>

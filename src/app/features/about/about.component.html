@@ -1,15 +1,21 @@
-<h2>My Story</h2>
-<p *ngFor="let paragraph of paragraphs$ | async">{{ paragraph }}</p>
+<ng-container *ngIf="!(loading$ | async); else loading">
+  <h2>My Story</h2>
+  <p *ngFor="let paragraph of paragraphs$ | async">{{ paragraph }}</p>
 
-<h2>Skills</h2>
-<mat-chip-list aria-label="Skill list">
-  <a
-    *ngFor="let skill of skills$ | async"
-    [href]="'http://google.com/search?q=' + skill"
-    target="_blank"
-  >
-    <mat-chip [ngClass]="skill | lowercase" selected>
-      {{ skill }}
-    </mat-chip>
-  </a>
-</mat-chip-list>
+  <h2>Skills</h2>
+  <mat-chip-list aria-label="Skill list">
+    <a
+      *ngFor="let skill of skills$ | async"
+      [href]="'http://google.com/search?q=' + skill"
+      target="_blank"
+    >
+      <mat-chip [ngClass]="skill | lowercase" selected>
+        {{ skill }}
+      </mat-chip>
+    </a>
+  </mat-chip-list>
+</ng-container>
+
+<ng-template #loading>
+  <mat-progress-spinner></mat-progress-spinner>
+</ng-template>
