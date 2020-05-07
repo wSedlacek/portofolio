@@ -34,6 +34,7 @@
     "contentful": "^7.14.4",
     "cuid": "^2.1.8",
     "ngx-take-until-destroy": "^5.4.0",
+    "polyfill-object.fromentries": "^1.0.1",
     "rxjs": "~6.5.5",
     "tslib": "^1.11.1",
     "zone.js": "~0.10.3"

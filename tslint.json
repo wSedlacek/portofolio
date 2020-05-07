@@ -61,7 +61,7 @@
     "no-import-side-effect": [
       true,
       {
-        "ignore-module": "(angular-register|commands|jest-preset-angular|zone|zone-testing)$"
+        "ignore-module": "(angular-register|commands|jest-preset-angular|zone|zone-testing|fromentries)$"
       }
     ],
     "no-misused-new": true,
