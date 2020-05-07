@@ -8,6 +8,9 @@
       <span class="date">
         {{ project.created_at | date }}
       </span>
+      <span class="stars" *ngIf="project.star_count">
+        <fa-icon [icon]="['fas', 'star']"></fa-icon>
+      </span>
     </div>
     <div fxLayout="column" fxLayoutAlign="center" fxFlex="100">
       <h2 class="name" fxLayout="column" fxLayoutAlign="center">

@@ -16,5 +16,6 @@ export const byListedDate = (
 export const byCreatedDate = (
   a: { created_at: DateCompatible },
   b: { created_at: DateCompatible }
-) =>
-  new Date(a.created_at).getTime() < new Date(b.created_at).getTime() ? 1 : -1;
+) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+
+export const byStars = (a, b) => b.star_count - a.star_count;

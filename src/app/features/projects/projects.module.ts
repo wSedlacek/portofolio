@@ -15,6 +15,7 @@ import {
   faBookReader,
   faCode,
   faLink,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   NgJoinPipeModule,
@@ -43,6 +44,6 @@ import { ProjectsComponent } from './projects.component';
 })
 export class ProjectsModule {
   constructor(private readonly library: FaIconLibrary) {
-    library.addIcons(faCode, faBookReader, faLink);
+    library.addIcons(faStar, faCode, faBookReader, faLink);
   }
 }
